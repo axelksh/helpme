@@ -1,0 +1,38 @@
+<% if !user_signed_in? %>
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Album example</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <p>
+            <%= link_to('Login', new_user_session_path, :class => "btn btn-primary my-2") %>
+            <%= link_to('Register', new_user_registration_path, :class => "btn btn-secondary my-2") %>
+          </p>
+        </div>
+      </section>
+<% end %>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="card-columns">
+      <% @tasks.each do |task| %>
+          <div class="card mb-4 box-shadow">
+            <% if task.images.attached? %>
+                <%= image_tag task.images[0], :class => "card-img-top" %>
+            <% else %>
+                <img src="/assets/photo.png" class="card-img-top">
+            <% end %>
+              <div class="card-body">
+                <h4 class="card-title"><%= task.title %></h4>
+                <p class="card-text text-truncate"><%= task.descr %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <%= link_to 'View', task_path(task), :class => "btn btn-sm btn-outline-secondary"%>
+                  </div>
+                  <small class="text-muted"><%= task.created_at.to_formatted_s(:db) %></small>
+                </div>
+              </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
