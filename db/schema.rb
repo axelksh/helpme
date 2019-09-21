@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_164522) do
+ActiveRecord::Schema.define(version: 2019_09_21_213834) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_164522) do
     t.string "email"
     t.string "phone"
     t.string "city"
+    t.string "state"
     t.index ["country_id"], name: "index_tasks_on_country_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
