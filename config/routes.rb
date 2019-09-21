@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tasks
   namespace :account do
     resources :tasks
+    resources :users
   end
   namespace :admin do
     resources :admins

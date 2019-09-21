@@ -1,5 +1,10 @@
-<h1>New Task</h1>
+<div class="container py-5">
+  <div class="text-center mb-4">
+    <span class="glyphicon glyphicon-search"></span>
+    <h1 class="h3 mb-3 font-weight-normal">Crete new task</h1>
+    <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
+  </div>
+  <%= render 'form', task: @task %>
 
-<%= render 'form', task: @task %>
-
-<%= link_to 'Back', account_tasks_path %>
+  <%= link_to 'Back', account_tasks_path %>
+</div>

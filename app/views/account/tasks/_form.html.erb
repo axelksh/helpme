@@ -1,32 +1,55 @@
 <%= form_with(model: [:account, @task], local: true) do |form| %>
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-      <% task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <%= form.text_field :email, value: current_user.email, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPhone4">Phone</label>
+        <%= form.text_field :phone, placeholder: 'Phone', class: 'form-control' %>
+      </div>
     </div>
-  <% end %>
+    <div class="form-group">
+      <label for="inputAddress">Title</label>
+      <%= form.text_field :title, placeholder: 'Need help for...', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <%= form.text_area :descr, placeholder: 'Detailed description', class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :task_title %>
-  </div>
 
-  <div class="field">
-    <%= form.label :descr %>
-    <%= form.text_area :descr, id: :task_descr %>
-  </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true %>
-  </div>
+    <div class="form-group">
+      <label for="inputAddress">Photos</label>
+      <%= form.file_field :images, multiple: true, class: 'form-control-file' %>
+    </div>
 
-    <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit 'Create task', class: 'btn btn-primary' %>
+
 <% end %>
