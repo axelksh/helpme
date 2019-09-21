@@ -16,6 +16,6 @@ class Account::TasksController < ApplicationController
 
   private
     def task_params
-      params.require(:task).permit(:title, :descr, images: [])
+      params.require(:task).permit(:email, :phone, :title, :descr, :city, :country_id ,images: [])
     end
 end

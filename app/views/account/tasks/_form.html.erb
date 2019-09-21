@@ -26,20 +26,17 @@
       </div>
       <div class="form-group col-md-6">
         <label for="inputState">Country</label>
-        <select id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
+        <%= form.collection_select :country_id, Country.all, :id, :name, {}, {class: 'form-control'} %>
       </div>
     </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
-    </div>
+    <!--<div class="form-group">-->
+      <!--<div class="form-check">-->
+        <!--<input class="form-check-input" type="checkbox" id="gridCheck">-->
+        <!--<label class="form-check-label" for="gridCheck">-->
+          <!--Check me out-->
+        <!--</label>-->
+      <!--</div>-->
+    <!--</div>-->
 
     <div class="form-row">
       <div class="form-group col-md-6">
