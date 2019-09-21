@@ -21,19 +21,15 @@
 
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <label for="inputAddress">City</label>
+        <%= form.text_field :city, placeholder: 'City', class: 'form-control' %>
       </div>
-      <div class="form-group col-md-4">
-        <label for="inputState">State</label>
+      <div class="form-group col-md-6">
+        <label for="inputState">Country</label>
         <select id="inputState" class="form-control">
           <option selected>Choose...</option>
           <option>...</option>
         </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
       </div>
     </div>
     <div class="form-group">
@@ -45,11 +41,17 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="inputAddress">Photos</label>
-      <%= form.file_field :images, multiple: true, class: 'form-control-file' %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Photos</label>
+        <%= form.file_field :images, multiple: true, class: 'form-control-file' %>
+      </div>
+      <div class="form-group col-md-5">
+      </div>
+      <div class="form-group col-md-1">
+        <%= form.submit 'Publish task', class: 'btn btn-primary' %>
+      </div>
     </div>
 
-    <%= form.submit 'Create task', class: 'btn btn-primary' %>
 
 <% end %>
