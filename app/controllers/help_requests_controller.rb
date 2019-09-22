@@ -7,9 +7,13 @@ class HelpRequestsController < ApplicationController
 
   def create
     @task = Task.find(params[:task_id])
-    @task.help_requests.create(help_request_params.merge(user_id: current_user.id))
-
-    redirect_to account_user_path(current_user.id)
+    params = help_request_params.merge user_id: current_user.id
+    if @task.help_requests.create params
+      @task.requested!
+      redirect_to account_user_path(current_user.id)
+    else
+      render 'new'
+    end
   end
 
   private
