@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :help_requests
   end
   namespace :account do
-    resources :tasks
+    resources :tasks do
+      resources :help_requests
+    end
     resources :users
   end
   namespace :admin do
