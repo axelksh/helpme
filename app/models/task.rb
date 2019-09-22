@@ -4,6 +4,7 @@ class Task < ApplicationRecord
   belongs_to :user
   has_many_attached :images
   has_one :country
+  has_many :help_requests
 
   aasm column: :state do
     state :free, initial: true

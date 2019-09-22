@@ -2,7 +2,7 @@
   <div class="col-md-5 p-lg-5 mx-auto my-5">
     <h2 class="font-weight-normal"><%= @task.title %></h2>
     <p class="lead font-weight-normal"><%= @task.descr %></p>
-    <a class="btn btn-outline-secondary" href="#">I will help you!</a>
+    <%= link_to'I will help you!', new_task_help_request_path(@task.id), class: 'btn btn-outline-secondary' %>
   </div>
   <div class="product-device box-shadow d-none d-md-block"></div>
   <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
@@ -16,7 +16,7 @@
                 <!--<h2 class="display-5">Another headline</h2>-->
                 <!--<p class="lead">And an even wittier subheading.</p>-->
               </div>
-              <%= image_tag image, :class => "card-img-top img-fluid" %>
+              <%= image_tag image, class: 'card-img-top img-fluid' %>
             </div>
           </div>
       <% end %>

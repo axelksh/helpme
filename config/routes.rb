@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  resources :tasks
+  resources :tasks do
+    resources :help_requests
+  end
   namespace :account do
     resources :tasks
     resources :users

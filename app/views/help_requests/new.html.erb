@@ -1,0 +1,14 @@
+<div class="container py-5">
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">Propose your help</h1>
+    <i class="fas fa-hands-helping text-secondary" style="font-size:35px;"></i>
+    <p class="py-3">Build form controls with floating labels via the
+      <code>:placeholder-shown</code>
+      pseudo-element.
+      <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a>
+    </p>
+  </div>
+  <%= render 'form', task: @task %>
+
+  <%= link_to 'Back', account_tasks_path %>
+</div>
