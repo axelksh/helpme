@@ -4,20 +4,20 @@ class Task < ApplicationRecord
   belongs_to :user
   has_many_attached :images
   has_one :country
-  has_many :help_requests
+  has_many :help_offers
 
   aasm column: :state do
     state :free, initial: true
-    state :requested
+    state :offered
     state :performing
     state :done
 
-    event :requested do
-      transitions from: [:free, :requested], to: :requested
+    event :offered do
+      transitions from: [:free, :offered], to: :offered
     end
 
     event :performing do
-      transitions from: :requested, to: :performing
+      transitions from: :offered, to: :performing
     end
 
     event :performing do

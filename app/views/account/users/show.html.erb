@@ -26,8 +26,8 @@
             <strong class="d-block text-gray-dark"><%= task.title %></strong>
             <%= task.descr %><br>
             <%= link_to 'Show', task_path(task)%>
-            <% if task.help_requests.any? %>
-                <%= link_to 'Help propositions', account_task_help_requests_path(task)%>
+            <% if task.help_offers.any? %>
+                <%= link_to 'Help propositions', account_task_help_offers_path(task)%>
             <% end %>
           </p>
         </div>

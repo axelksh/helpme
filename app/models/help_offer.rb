@@ -1,4 +1,4 @@
-class HelpRequest < ApplicationRecord
+class HelpOffer < ApplicationRecord
   include AASM
 
   belongs_to :task

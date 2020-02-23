@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :tasks do
-    resources :help_requests
+    resources :help_offers
   end
   namespace :account do
     resources :tasks do
-      resources :help_requests
+      resources :help_offers
     end
     resources :users
   end
